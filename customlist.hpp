@@ -6,7 +6,7 @@
 class customList
 {
 private:
-    int size_of_list;
+    int size_of_list; //размер списка
     struct Item //элемент списка
     {
         CPU cpu;
