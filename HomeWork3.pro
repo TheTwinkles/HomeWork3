@@ -6,8 +6,10 @@ CONFIG -= qt
 SOURCES += \
         cpu.cpp \
         customlist.cpp \
-        main.cpp
+        main.cpp \
+        menu.cpp
 
 HEADERS += \
     cpu.hpp \
-    customlist.hpp
+    customlist.hpp \
+    menu.hpp
