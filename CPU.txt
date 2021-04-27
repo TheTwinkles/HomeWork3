@@ -1,0 +1,9 @@
+std::string manufacturer; //производитель
+    int cost; //цена
+    std::string socket; //сокет
+    int core_num; //кол-во ядер
+    int proc_speed; //тактовая частота
+    std::string mem_type; //тип памяти
+    int mem_freq; //частота памяти
+Intel;9900;LGA1200;4;3600;DDR4;2666;
+Intel222;9900;LGA1200;4;3600;DDR4;2666;

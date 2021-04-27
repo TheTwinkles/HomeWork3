@@ -1,12 +1,23 @@
 #include "customlist.hpp"
-//#include "cpu.hpp"
+#include "cpu.hpp"
 
 customList::customList():
     head(nullptr), tail(nullptr)
 {
-    CPU();
-    item.next = nullptr;
-    item.prev = nullptr;
+    size_of_list = 1;
+    arr_Item = new Item[size_of_list];
+    for (int i = 0; i < size_of_list; i++)
+    {
+        arr_Item[i].cpu = CPU();
+        arr_Item[i].next = nullptr;
+        arr_Item[i].prev = nullptr;
+    }
+}
+
+customList::customList(const CPU sCPU): //?????????????
+    arr_Item[size_of_list].cpu(sCPU)
+{
+    //CPU(sCPU);
 }
 
 //customList::customList(const CPU sCPU):
@@ -26,20 +37,20 @@ customList::~customList()
     }
 }
 
-void customList::setCPU(const CPU sCPU)
-{
-    item.cpu = sCPU;
-}
+//void customList::setCPU(const CPU sCPU)
+//{
+//    item.cpu = sCPU;
+//}
 
-CPU customList::getCPU() const
-{
-    return item.cpu;
-}
+//CPU customList::getCPU() const
+//{
+//    return item.cpu;
+//}
 
 void customList::addToList(CPU adCPU)
 {
     Item *temp = new Item; //Выделение памяти под новый элемент списка
-    item.next = nullptr; //Указываем, что изначально по следующему адресу пусто
+    temp->next = nullptr; //Указываем, что изначально по следующему адресу пусто
     temp->cpu = adCPU; //Записываем значение в структуру
 
     if (head!=NULL) //Если список не пуст

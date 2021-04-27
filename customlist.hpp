@@ -6,19 +6,20 @@
 class customList
 {
 private:
+    int size_of_list;
     struct Item //элемент списка
     {
         CPU cpu;
         Item* next; //указатель на следующий элемент списка
         Item* prev; //указатель на предыдущий элемент списка
-    } item;
+    } *arr_Item = new Item[size_of_list]; //создание массива элементов списка
     Item* head;
     Item* tail;
 public:
 
     customList(); //конструктор списка по умолчанию
 
-//    customList(const CPU sCPU); //конструктор списка с параметром
+    customList(const CPU sCPU); //конструктор списка с параметром
 
     //запрет создания конструктора копирования и перегрузки оператора =
     customList(const customList &other) = delete;
