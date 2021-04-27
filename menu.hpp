@@ -11,9 +11,11 @@ public:
     menu(const menu &other) = delete; //запрет создания конструктора копирования меню
 
     //методы класса меню
+    void show();
     void openFile();
     void saveFile();
     void displayList();
+    void addItem();
 };
 
 #endif // MENU_HPP

@@ -1,12 +1,14 @@
 #include <iostream>
 
-#include "cpu.hpp"
-
+//#include "cpu.hpp"
+#include "menu.hpp"
 using namespace std;
 
 int main()
 {
-    cout << "Parametric Constructor Output" << endl;
+    menu mainMenu;
+    mainMenu.show();
+    /*cout << "Parametric Constructor Output" << endl;
     CPU cpu1("Intel",
              9900,
              "LGA1200",
@@ -15,5 +17,6 @@ int main()
              "DDR4",
              2666);
     cpu1.show();
-    return 0;
+    return 0;*/
+
 }

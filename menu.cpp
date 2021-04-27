@@ -4,17 +4,22 @@
 
 menu::menu()
 {
+
+}
+
+void menu::show()
+{
     char n; //
     while(true)
     {
         std::cout <<
-        "1)Открыть файл\n"
-        "2)Сохранить файл\n"
-        "3)Изменение записи\n"
-        "4)Поиск\n"
-        "5)Вывод списка на экран\n"
-        "6)О программе\n"
-        "q)Вывод" << std::endl;
+        "1)Open File\n"
+        "2)Save File\n"
+        "3)Print to screen\n"
+        "4)Add Item\n"
+        "5)Search\n"
+        "6)About\n"
+        "q)Exit" << std::endl;
 
         std::cin >> n;
         switch (n)
@@ -31,7 +36,12 @@ menu::menu()
 
             default: std::cerr << "Error: wrond menu command" << std::endl;
             }
-        }
+    }
+}
+
+void menu::addItem()
+{
+
 }
 
 menu::~menu()
