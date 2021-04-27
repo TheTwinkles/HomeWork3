@@ -127,16 +127,16 @@ int CPU::getMem_freq() const
 //реализация функции вывода данных на экран
 void CPU::show() const
 {
-    cout << "-----virtual method output-----" << endl;
+    /*cout << "-----virtual method output-----" << endl;
     cout << "Socket: " << socket << '\n'
          << "Number of cores: " << core_num << '\n'
          << "Processor speed: " << proc_speed << '\n'
          << "Memory type: " << mem_type << '\n'
-         << "Memory frequency: " << mem_freq << endl;
+         << "Memory frequency: " << mem_freq << endl;*/
 
     cout << "\n------get methods Output------" << endl;
-    cout << "Manufacturer: " << getManufacturer() << '\n'
-         << "Cost: " << getCost() << '\n'
+    cout << "Manufacturer: " << manufacturer << '\n'
+         << "Cost: " << cost << '\n'
          << "Socket: " << socket << '\n'
          << "Number of cores: " << core_num << '\n'
          << "Processor speed: " << proc_speed << '\n'

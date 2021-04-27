@@ -1,9 +1,19 @@
 #include <iostream>
 
+#include "cpu.hpp"
+
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
+    cout << "Parametric Constructor Output" << endl;
+    CPU cpu1("Intel",
+             9900,
+             "LGA1200",
+             4,
+             3600,
+             "DDR4",
+             2666);
+    cpu1.show();
     return 0;
 }
