@@ -5,7 +5,9 @@ CONFIG -= qt
 
 SOURCES += \
         cpu.cpp \
+        customlist.cpp \
         main.cpp
 
 HEADERS += \
-    cpu.hpp
+    cpu.hpp \
+    customlist.hpp
