@@ -3,6 +3,6 @@
 
 #include "customlist.hpp"
 
-customList openFile();
+void openFile(customList &list);
 
 #endif // FILEFUNCTIONS_HPP

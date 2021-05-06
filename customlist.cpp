@@ -1,11 +1,14 @@
 #include "customlist.hpp"
 #include "cpu.hpp"
 
+#include <iostream>
+
 customList::customList():
-    head(nullptr), tail(nullptr)
+    size_of_list(1)
+  , arr_Item(new Item[size_of_list])
+  , head(nullptr)
+  , tail(nullptr)
 {
-    size_of_list = 1;
-    arr_Item = new Item[size_of_list];
     for (int i = 0; i < size_of_list; i++)
     {
         arr_Item[i].cpu = CPU();
@@ -14,11 +17,11 @@ customList::customList():
     }
 }
 
-customList::customList(const CPU sCPU): //?????????????
-    arr_Item[size_of_list].cpu(sCPU)
-{
-    //CPU(sCPU);
-}
+//customList::customList(const CPU sCPU): //?????????????
+//    arr_Item[size_of_list].cpu(sCPU)
+//{
+//    //CPU(sCPU);
+//}
 
 //customList::customList(const CPU sCPU):
 //    customList::Item::cpu(sCPU)
@@ -47,7 +50,7 @@ customList::~customList()
 //    return item.cpu;
 //}
 
-void customList::addToList(CPU adCPU)
+void customList::addToList(CPU &adCPU)
 {
     Item *temp = new Item; //выделение памяти под новый элемент списка
     temp->next = nullptr; //изначально по следующему адресу null_ptr
@@ -65,6 +68,26 @@ void customList::addToList(CPU adCPU)
         head = temp;
         tail = temp; //голова=хвост=тот элемент, что сейчас добавили
     }
+}
+
+void customList::printList() //customList &list
+{
+//    Node *temp=Tail; //Временный указатель на адрес последнего элемента
+//         while (temp!=NULL) //Пока не встретится пустое значение
+//         {
+//             cout<<temp->x<<” “; //Выводить значение на экран
+//             temp=temp->Prev; //Указываем, что нужен адрес предыдущего элемента
+//         }
+//         cout<<“\n”;
+
+//     //ВЫВОДИМ СПИСОК С НАЧАЛА
+//         temp=Head; //Временно указываем на адрес первого элемента
+//          while (temp!=NULL) //Пока не встретим пустое значение
+//         {
+//             cout<<temp->x<<” “; //Выводим каждое считанное значение на экран
+//             temp=temp->Next; //Смена адреса на адрес следующего элемента
+//         }
+//    //std::cout << list.arr_Item->cpu.show();
 }
 
 //void customList::addToList()

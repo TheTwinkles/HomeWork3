@@ -15,3 +15,7 @@ HEADERS += \
     cpu.hpp \
     customlist.hpp \
     menu.hpp
+
+DISTFILES += \
+    CPU.txt \
+    WorkPlan.txt

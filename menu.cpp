@@ -1,4 +1,5 @@
 #include "menu.hpp"
+#include "FileFunctions.hpp"
 
 #include <iostream>
 
@@ -7,11 +8,12 @@ menu::menu()
 
 }
 
-void menu::show()
+void menu::show(customList &list)
 {
-    char n; //
+    char n; //переменная для ввода пункта меню
     while(true)
     {
+        system("cls");
         std::cout <<
         "1)Open File\n"
         "2)Save File\n"
@@ -24,27 +26,30 @@ void menu::show()
         std::cin >> n;
         switch (n)
         {
-            case 49:  break;
-            case 50:  break;
-            case 51:  break;
-            case 52:  break;
-            case 53:  break;
-            case 54: std::cout << "Домашняя работа №3, Заболотнов Николай Владимирович "
-                                   "ИЭУИС-2-6 \n" << std::endl;
-                      break;
+            case 49: MenuOpenFile(list); break;
+            case 50: break;
+            case 51: break;
+            case 52: break;
+            case 53: break;
+            case 54: std::cout << "Home Work №3" << std::endl; break;
             case 113: exit(EXIT_SUCCESS);
 
-            default: std::cerr << "Error: wrond menu command" << std::endl;
-            }
+            default: std::cerr << "Error: wrong menu command" << std::endl;
+        }
     }
 }
 
-void menu::addItem()
+inline void menu::MenuOpenFile(customList &list)
 {
+openFile(list);
+}
 
+void menu::addItem(CPU &adCPU)
+{
+//addToList();
 }
 
 menu::~menu()
 {
-    system("cls");
+
 }

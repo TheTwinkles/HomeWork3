@@ -1,13 +1,16 @@
 #include <iostream>
 
-//#include "cpu.hpp"
 #include "menu.hpp"
+#include "customlist.hpp"
+
 using namespace std;
 
 int main()
 {
     menu mainMenu;
-    mainMenu.show();
+    customList MainList;
+
+    mainMenu.show(MainList);
     /*cout << "Parametric Constructor Output" << endl;
     CPU cpu1("Intel",
              9900,
