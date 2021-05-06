@@ -40,16 +40,6 @@ customList::~customList()
     }
 }
 
-//void customList::setCPU(const CPU sCPU)
-//{
-//    item.cpu = sCPU;
-//}
-
-//CPU customList::getCPU() const
-//{
-//    return item.cpu;
-//}
-
 void customList::addToList(CPU &adCPU)
 {
     Item *temp = new Item; //выделение памяти под новый элемент списка
@@ -72,22 +62,13 @@ void customList::addToList(CPU &adCPU)
 
 void customList::printList() //customList &list
 {
-//    Node *temp=Tail; //Временный указатель на адрес последнего элемента
-//         while (temp!=NULL) //Пока не встретится пустое значение
-//         {
-//             cout<<temp->x<<” “; //Выводить значение на экран
-//             temp=temp->Prev; //Указываем, что нужен адрес предыдущего элемента
-//         }
-//         cout<<“\n”;
-
-//     //ВЫВОДИМ СПИСОК С НАЧАЛА
-//         temp=Head; //Временно указываем на адрес первого элемента
-//          while (temp!=NULL) //Пока не встретим пустое значение
-//         {
-//             cout<<temp->x<<” “; //Выводим каждое считанное значение на экран
-//             temp=temp->Next; //Смена адреса на адрес следующего элемента
-//         }
-//    //std::cout << list.arr_Item->cpu.show();
+    Item *temp = tail; //временный указатель на адрес последнего элемента
+    while (temp!=NULL) //поднимаемся пока не встретим конец(начало)
+    {
+        temp->cpu.show();
+        temp = temp->prev; //записываем адрес предыдущего элемента
+    }
+    system("pause");
 }
 
 //void customList::addToList()

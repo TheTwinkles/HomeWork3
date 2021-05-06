@@ -14,10 +14,11 @@ public:
 
     //методы класса меню
     void show(customList &list);
+private:
     void MenuOpenFile(customList &list);
-    void saveFile();
-    void displayList();
-    void addItem(CPU &adCPU);
+    void MenuSaveFile(customList &list);
+    void MenuDisplayList(customList &list);
+    void MenuAddItem_toList(CPU &adCPU);
 };
 
 #endif // MENU_HPP

@@ -35,9 +35,10 @@ void openFile(customList &list)
             temp[j] = record;
             j++;
         }
+        cout << temp[0] << "; " << temp[1] << endl; //данные нормально считываются
         CPU cpu;
-        cpu.setManufacturer(temp[0]);
-        cpu.setCost(stoi(temp[1]));
+        cpu.setManufacturer(temp[0]); //возможно не срабатывает
+        cpu.setCost(stoi(temp[1])); //возможно не срабатывает
         cpu.setSocket(temp[2]);
         cpu.setCore_num(stoi(temp[3]));
         cpu.setProc_speed(stoi(temp[4]));

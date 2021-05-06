@@ -15,7 +15,7 @@ public:
     };
 private:
     int size_of_list; //размер списка
-    Item *arr_Item;//создание массива элементов списка
+    Item *arr_Item; //создание массива элементов списка
     Item* head;
     Item* tail;
 public:
