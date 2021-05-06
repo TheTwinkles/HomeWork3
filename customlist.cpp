@@ -60,7 +60,7 @@ void customList::addToList(CPU &adCPU)
     }
 }
 
-void customList::printList() //customList &list
+void customList::printList() const //customList &list
 {
     Item *temp = tail; //временный указатель на адрес последнего элемента
     while (temp!=NULL) //поднимаемся пока не встретим конец(начало)
@@ -70,25 +70,3 @@ void customList::printList() //customList &list
     }
     system("pause");
 }
-
-//void customList::addToList()
-//{
-
-//    customList* curListItem = listStart;
-
-//    if(listStart == 0)
-//    {
-//        listStart = this;
-//        return;
-//    }
-//    else
-//    {
-//        while (curListItem->item.next != 0)
-//            curListItem = curListItem->item.next;
-
-//      curListItem->item.next = this;
-//     this->item.prev = curListItem;
-// }
-//}
-
-

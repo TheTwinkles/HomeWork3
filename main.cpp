@@ -13,15 +13,6 @@ int main()
     customList MainList;
 
     mainMenu.show(MainList);
-    /*cout << "Parametric Constructor Output" << endl;
-    CPU cpu1("Intel",
-             9900,
-             "LGA1200",
-             4,
-             3600,
-             "DDR4",
-             2666);
-    cpu1.show();
-    return 0;*/
 
+    return 0;
 }

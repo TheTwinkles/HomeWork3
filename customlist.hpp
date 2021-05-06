@@ -39,7 +39,7 @@ public:
 
     void addToList(CPU &adCPU); //метод добавления элемента в список
 
-    void printList(); //customList &list
+    void printList() const; //customList &list
 
 };
 

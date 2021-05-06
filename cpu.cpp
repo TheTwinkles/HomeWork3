@@ -32,6 +32,8 @@ CPU::CPU(const string sManufacturer, const int sCost,
 }
 
 CPU::CPU(const CPU &other): //реализация конструктора копирования
+    manufacturer(other.manufacturer),
+    cost(other.cost),
     socket(other.socket),
     core_num(other.core_num),
     proc_speed(other.proc_speed),
@@ -50,6 +52,8 @@ CPU &CPU::operator=(const CPU &rhs) //реализация перегрузки 
 {
     if (this == &rhs) return *this;
 
+    manufacturer = rhs.manufacturer;
+    cost = rhs.cost;
     socket = rhs.socket;
     core_num = rhs.core_num;
     proc_speed = rhs.proc_speed;
@@ -127,14 +131,6 @@ int CPU::getMem_freq() const
 //реализация функции вывода данных на экран
 void CPU::show() const
 {
-    /*cout << "-----virtual method output-----" << endl;
-    cout << "Socket: " << socket << '\n'
-         << "Number of cores: " << core_num << '\n'
-         << "Processor speed: " << proc_speed << '\n'
-         << "Memory type: " << mem_type << '\n'
-         << "Memory frequency: " << mem_freq << endl;*/
-
-    //cout << "\n------get methods Output------" << endl;
     cout << "Manufacturer: " << manufacturer << "; "
          << "Cost: " << cost << "; "
          << "Socket: " << socket << "; "

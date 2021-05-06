@@ -38,7 +38,7 @@ void menu::show(customList &list)
         }
     }
 }
-////// !!!!!!!!!!!!!!!!!!!!!!! не читается производитель и цена !!!!!!!!!!!!!!
+
 inline void menu::MenuOpenFile(customList &list)
 {
     openFile(list);
