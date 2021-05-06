@@ -17,8 +17,9 @@ public:
 private:
     void MenuOpenFile(customList &list);
     void MenuSaveFile(customList &list);
+
     void MenuDisplayList(customList &list);
-    void MenuAddItem_toList(CPU &adCPU);
+    void MenuAddItem_toList(customList &list);
 };
 
 #endif // MENU_HPP
