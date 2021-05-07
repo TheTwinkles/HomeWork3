@@ -35,7 +35,7 @@ void openFile(customList &list)
             temp[j] = record;
             j++;
         }
-        CPU cpu;
+        CPU cpu; //добавляемый объект
         //заполнение полей объекта данными
         cpu.setManufacturer(temp[0]);
         cpu.setCost(stoi(temp[1]));

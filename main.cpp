@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    system("mode con cols=100 lines=50");
+    system("mode con cols=100 lines=25");
 
     menu mainMenu;
     customList MainList;

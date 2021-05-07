@@ -52,12 +52,12 @@ inline void menu::MenuDisplayList(customList &list)
 
 void menu::MenuAddItem_toList(customList &list)
 {
-    CPU inCPU;
-
     std::cout << "Input CPU info in line of the following type: ...;...;" << std::endl;
 
     std::string in_str; //строка с данными процессора
-    getline(std::cin, in_str); //записываем данные процессора в строку
+
+    std::cin >> in_str;
+
     std::stringstream in_stream(in_str); //создание потока строк
     std::string record; //строка для хранения конкретной записи (;...;)
     std::string temp[7]; //массив строк для хранения записей полученной парсингом
@@ -68,8 +68,9 @@ void menu::MenuAddItem_toList(customList &list)
         temp[j] = record;
         j++;
     }
-    CPU addCPU;
+    CPU addCPU; //добавляемый объект
     //заполнение полей объекта данными
+    std::cout << "JOJ" << std::endl;
     addCPU.setManufacturer(temp[0]);
     addCPU.setCost(stoi(temp[1]));
     addCPU.setSocket(temp[2]);
