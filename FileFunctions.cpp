@@ -49,6 +49,7 @@ void openFile(customList &list)
         list.addToList(cpu); //добавление объекта в список
     }
     cout << "File Opened Sucessfully" << endl;
+    in_file.close();
     system("pause");
     return;
 }
@@ -64,9 +65,10 @@ void saveFile(customList &list)
         exit(EXIT_FAILURE);
     }
 
-    customList::Item *temp = list.tail;
+    customList::Item *temp = list.head;
     while (temp!=NULL) //поднимаемся пока не встретим конец(начало)
     {
+        //запись данных в файл
         out_file << temp->cpu.getManufacturer() << ';'
                  << temp->cpu.getCost() << ';'
                  << temp->cpu.getSocket() << ';'
@@ -74,7 +76,7 @@ void saveFile(customList &list)
                  << temp->cpu.getProc_speed() << ';'
                  << temp->cpu.getMem_type() << ';'
                  << temp->cpu.getMem_freq() << ';' << endl;
-        temp = temp->prev; //записываем адрес предыдущего элемента
+        temp = temp->next; //записываем адрес предыдущего элемента
     }
     cout << "File was saved successfully" << endl;
     out_file.close();

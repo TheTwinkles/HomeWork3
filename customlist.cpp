@@ -4,31 +4,35 @@
 #include <iostream>
 
 customList::customList():
-    size_of_list(1)
-  , arr_Item(new Item[size_of_list])
-  , head(nullptr)
+ //   size_of_list(1)
+ // , arr_Item(new Item[size_of_list])
+   head(nullptr)
   , tail(nullptr)
 {
-    for (int i = 0; i < size_of_list; i++)
-    {
-        arr_Item[i].cpu = CPU();
-        arr_Item[i].next = nullptr;
-        arr_Item[i].prev = nullptr;
-    }
+//    for (int i = 0; i < size_of_list; i++)
+//    {
+//        arr_Item[i].cpu = CPU();
+//        arr_Item[i].next = nullptr;
+//        arr_Item[i].prev = nullptr;
+//    }
 }
 
-//customList::customList(const CPU sCPU): //?????????????
-//    arr_Item[size_of_list].cpu(sCPU)
-//{
-//    //CPU(sCPU);
-//}
-
-//customList::customList(const CPU sCPU):
-//    customList::Item::cpu(sCPU)
-//{
-//    item.next = nullptr;
-//    item.prev = nullptr;
-//}
+customList::Item *customList::operator[](const int index)
+{
+    //если элементов нет в списке
+    if (head == nullptr)
+    {
+        return nullptr;
+    }
+    Item* element = head;
+    for (int i = 0; i < index; i++)
+    {
+        element = element->next;
+        if (!element) return nullptr; //если индекс был указан
+        //больше размера списка
+    }
+    return element;
+}
 
 customList::~customList()
 {
@@ -62,11 +66,11 @@ void customList::addToList(CPU &adCPU)
 
 void customList::printList() const //customList &list
 {
-    Item *temp = tail; //временный указатель на адрес последнего элемента
+    Item *temp = head; //временный указатель на адрес последнего элемента
     while (temp!=NULL) //поднимаемся пока не встретим конец(начало)
     {
         temp->cpu.show();
-        temp = temp->prev; //записываем адрес предыдущего элемента
+        temp = temp->next; //записываем адрес предыдущего элемента
     }
     system("pause");
 }

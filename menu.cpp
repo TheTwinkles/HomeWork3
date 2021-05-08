@@ -31,7 +31,7 @@ void menu::show(customList &MList)
             case 50: MenuSaveFile(MList); break;
             case 51: MenuDisplayList(MList); break;
             case 52: MenuAddItem_toList(MList); break;
-            case 53: break;
+            case 53: MenuSearchItemInList(MList); break;
             case 54: std::cout << "Home Work №3" << std::endl; break;
             case 113: exit(EXIT_SUCCESS);
 
@@ -39,7 +39,7 @@ void menu::show(customList &MList)
         }
     }
 }
-
+//интерфейс меню
 inline void menu::MenuOpenFile(customList &list)
 {
     openFile(list);
@@ -85,6 +85,15 @@ void menu::MenuAddItem_toList(customList &list)
     addCPU.setMem_freq(stoi(temp[6]));
 
     list.addToList(addCPU); //добавление объекта в список
+}
+
+void menu::MenuSearchItemInList(customList &list)
+{
+    std::cout << "Enter the position number in the search list: ";
+    int pos;
+    std::cin >> pos;
+    list[pos]->cpu.show();
+    system("pause");
 }
 
 menu::~menu()
