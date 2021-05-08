@@ -4,17 +4,10 @@
 #include <iostream>
 
 customList::customList():
- //   size_of_list(1)
- // , arr_Item(new Item[size_of_list])
-   head(nullptr)
+    head(nullptr)
   , tail(nullptr)
 {
-//    for (int i = 0; i < size_of_list; i++)
-//    {
-//        arr_Item[i].cpu = CPU();
-//        arr_Item[i].next = nullptr;
-//        arr_Item[i].prev = nullptr;
-//    }
+
 }
 
 customList::Item *customList::operator[](const int index)
@@ -64,7 +57,7 @@ void customList::addToList(CPU &adCPU)
     }
 }
 
-void customList::printList() const //customList &list
+void customList::printList() const
 {
     Item *temp = head; //временный указатель на адрес последнего элемента
     while (temp!=NULL) //поднимаемся пока не встретим конец(начало)
