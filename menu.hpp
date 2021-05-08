@@ -15,10 +15,10 @@ public:
     //методы класса меню
     void show(customList &list);
 private:
-    void MenuOpenFile(customList &list);
-    void MenuSaveFile(customList &list);
+    inline void MenuOpenFile(customList &list);
+    inline void MenuSaveFile(customList &list);
 
-    void MenuDisplayList(customList &list);
+    inline void MenuDisplayList(customList &list);
     void MenuAddItem_toList(customList &list);
 };
 

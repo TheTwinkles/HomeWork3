@@ -28,7 +28,7 @@ void menu::show(customList &MList)
         switch (n)
         {
             case 49: MenuOpenFile(MList); break;
-            case 50: break;
+            case 50: MenuSaveFile(MList); break;
             case 51: MenuDisplayList(MList); break;
             case 52: MenuAddItem_toList(MList); break;
             case 53: break;
@@ -45,6 +45,11 @@ inline void menu::MenuOpenFile(customList &list)
     openFile(list);
 }
 
+inline void menu::MenuSaveFile(customList &list)
+{
+    saveFile(list);
+}
+
 inline void menu::MenuDisplayList(customList &list)
 {
     list.printList();
@@ -52,7 +57,8 @@ inline void menu::MenuDisplayList(customList &list)
 
 void menu::MenuAddItem_toList(customList &list)
 {
-    std::cout << "Input CPU info in line of the following type: ...;...;" << std::endl;
+    std::cout << "Input CPU info in line of the following type: ...;...;"
+                    "(up to 7 positions)" << std::endl;
 
     std::string in_str; //строка с данными процессора
 
@@ -70,7 +76,6 @@ void menu::MenuAddItem_toList(customList &list)
     }
     CPU addCPU; //добавляемый объект
     //заполнение полей объекта данными
-    std::cout << "JOJ" << std::endl;
     addCPU.setManufacturer(temp[0]);
     addCPU.setCost(stoi(temp[1]));
     addCPU.setSocket(temp[2]);

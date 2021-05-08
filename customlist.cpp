@@ -32,7 +32,7 @@ customList::customList():
 
 customList::~customList()
 {
-    while (head) //пока по адресу начала списка что-то есть
+    while(head) //пока по адресу начала списка что-то есть
     {
         tail = head->next;
         delete head;

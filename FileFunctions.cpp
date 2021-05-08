@@ -1,4 +1,5 @@
 #include "FileFunctions.hpp"
+#include "customlist.hpp"
 
 #include <fstream>
 #include <iostream>
@@ -48,6 +49,35 @@ void openFile(customList &list)
         list.addToList(cpu); //добавление объекта в список
     }
     cout << "File Opened Sucessfully" << endl;
+    system("pause");
+    return;
+}
+
+void saveFile(customList &list)
+{
+    fstream out_file("CPU.txt", ios::out); //открытие файлового потока
+
+    //проверка открытия файла
+    if (!out_file.is_open())
+    {
+        cerr << "Error opening file!" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    customList::Item *temp = list.tail;
+    while (temp!=NULL) //поднимаемся пока не встретим конец(начало)
+    {
+        out_file << temp->cpu.getManufacturer() << ';'
+                 << temp->cpu.getCost() << ';'
+                 << temp->cpu.getSocket() << ';'
+                 << temp->cpu.getCore_num() << ';'
+                 << temp->cpu.getProc_speed() << ';'
+                 << temp->cpu.getMem_type() << ';'
+                 << temp->cpu.getMem_freq() << ';' << endl;
+        temp = temp->prev; //записываем адрес предыдущего элемента
+    }
+    cout << "File was saved successfully" << endl;
+    out_file.close();
     system("pause");
     return;
 }
