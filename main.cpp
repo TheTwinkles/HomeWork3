@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    system("mode con cols=100 lines=25");
+    //system("mode con cols=100 lines=25");
 
     menu mainMenu; //создание объекта главного меню программы
     customList MainList; //создание объекта списка для работы программы

@@ -32,7 +32,9 @@ void menu::show(customList &MList)
             case 51: MenuDisplayList(MList); break;
             case 52: MenuAddItem_toList(MList); break;
             case 53: MenuSearchItemInList(MList); break;
-            case 54: std::cout << "Home Work №3" << std::endl; break;
+            case 54: std::cout << "Home Work №3, Zabolotnov N.V. IEUIS-2-6"
+                               << std::endl;
+                               break;
             case 113: exit(EXIT_SUCCESS);
 
             default: std::cerr << "Error: wrong menu command" << std::endl;
